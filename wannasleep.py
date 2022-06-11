@@ -1,13 +1,14 @@
 
-import sys
 from stackapi import StackAPI
+import sys
 import os
+import html2text
 
 search_string = 'typeerror: list indices must be integers or slices, not str'
 
 SITE = StackAPI('stackoverflow')
 
-class Scarpper():
+class Scrapper():
   def __init__(self, search_string):
     self.SITE = StackAPI('stackoverflow')
     self.search_string = search_string
@@ -40,14 +41,11 @@ class Scarpper():
         if a['is_accepted'] == True:
           answer = a['body']
           break
-
-      with open('answer.html', 'w') as f:
-        f.write(answer)
-        
-      os.system('firefox answer.html')
-
+      
+      print(html2text.html2text(answer))
+      
     else:
       print("No answer was found")
       sys.exit()
 
-Scarpper(search_string).display_answer()
+Scrapper(search_string).display_answer()
