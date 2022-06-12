@@ -33,4 +33,6 @@ optional arguments:
   --history      run previous command and retrieves error
 
 ```
+**I love beautiful pull requests and contributions. 
 
+You got any ideas for new features? Implement it and submit a pull request!**
