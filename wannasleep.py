@@ -2,7 +2,8 @@
 
 from scrapper import Scrapper
 import subprocess
-
+import argparse
+import sys
 
 def get_error(command=None): 
   from pathlib import Path
@@ -24,10 +25,27 @@ def get_error(command=None):
  
   return error
 
-if __name__ == "__main__":
-  error = get_error()
+def args():
+  parser = argparse.ArgumentParser()
+  parser.add_argument("--error", help="set error (default mode)")
+  parser.add_argument("--howto",help="look for how to do something")
+  parser.add_argument("--history", action="store_true")
 
-  if len(error) <= 0:
-    print("No error was found")
+  args = parser.parse_args()
+  return args
+
+if __name__ == "__main__":
+  args = args()
+  
+  if args.history:
+    query = get_error()
+    if len(query) <= 0:
+      print("No error was found")
+      sys.exit(0)
+
+  elif args.howto:
+    query = args.howto
   else:
-    Scrapper(error)
+    query = args.error
+  
+  Scrapper(query).display_answer()

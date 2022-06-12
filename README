@@ -4,3 +4,7 @@ You can this script and it will:
 - Retrieve the error
 - Search for the best solution
 - Return the solution
+
+Note: Stackoverflow api takes really precise queries. The real power is with Google.
+
+TODO: Refactor with Google Search API

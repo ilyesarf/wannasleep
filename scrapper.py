@@ -4,8 +4,6 @@ import sys
 import os
 import html2text
 
-search_string = 'How to parse a Linux terminal error message in Python?'
-
 SITE = StackAPI('stackoverflow')
 
 class Scrapper():
