@@ -9,7 +9,7 @@ Note: Stackoverflow api takes really precise queries. The real power is with Goo
 
 TODO: Refactor with Google Search API
 
-##Installation
+## Installation
 
 ```
 $ git clone https://github.com/Quimzy/wannasleep.git
@@ -21,7 +21,7 @@ $ pip install requirements.txt
 $ python wannasleep.py --help
 ```
 
-##Usage
+## Usage
 
 ```
 usage: wannasleep.py [-h] [--error ERROR] [--howto HOWTO] [--history]
