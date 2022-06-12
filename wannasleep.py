@@ -28,14 +28,15 @@ def get_error(command=None):
 def args():
   parser = argparse.ArgumentParser()
   parser.add_argument("--error", help="set error (default mode)")
-  parser.add_argument("--howto",help="look for how to do something")
-  parser.add_argument("--history", action="store_true")
+  parser.add_argument("--howto", help="look for how to do something")
+  parser.add_argument("--history", action="store_true", help="run previous command and retrieves error")
 
   args = parser.parse_args()
-  return args
+  return parser, args
 
 if __name__ == "__main__":
-  args = args()
+  parser, args = args()
+  
   
   if args.history:
     query = get_error()
@@ -45,7 +46,10 @@ if __name__ == "__main__":
 
   elif args.howto:
     query = args.howto
-  else:
+  elif args.error:
     query = args.error
-  
+  else:
+    parser.print_help(sys.stderr)
+    sys.exit(0)
+
   Scrapper(query).display_answer()
