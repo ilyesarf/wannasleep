@@ -1,6 +1,6 @@
 Sometimes when coding, the last thing you want is to open another tab in the browser to look up an error...
 
-You can this script and it will:
+You can run this script and it will:
 - Retrieve the error
 - Search for the best solution
 - Return the solution
